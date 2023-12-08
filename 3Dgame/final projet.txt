@@ -1,0 +1,1 @@
+W/S: thrust up/down Arrow keys (up, left, right, down): move foward, left, right, and backwards Q/E: rotate lander left and right To switch to different cameras press: 1 and tipe c - can use mouse to change view and move around 2 - Cam tracking lander 3 - Onboard camera 4 - top view camera space - to reset
