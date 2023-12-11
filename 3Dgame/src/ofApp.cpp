@@ -447,6 +447,27 @@ void ofApp::draw() {
 	currentFuel += "Current Fuel: " + to_string(fuel) + " / 120 seconds";
 	ofSetColor(ofColor::white);
 	ofDrawBitmapString(currentFuel, ofGetWindowWidth() / 2 + 300, 60); 
+
+	
+	int textX = ofGetWindowWidth() / 2 + 200;
+	int textY = ofGetWindowHeight() / 6;
+
+
+	// draw to let player know game is over
+	if (gameOver) {
+		ofSetColor(ofColor::red);
+		ofDrawBitmapString("Game Over! \nScore: 0", textX, textY);
+	}
+
+	if (roughLanding && !gameOver) {
+		ofSetColor(ofColor::green);
+		ofDrawBitmapString("You are landing.\nScore: " + to_string(finalScore), textX, textY);
+	}
+
+	if (softLanding && !gameOver) {
+		ofSetColor(ofColor::green);
+		ofDrawBitmapString("You are landing.\nScore: " + to_string(finalScore), textX, textY);
+	}
 		
 }
 
@@ -883,11 +904,6 @@ void ofApp::savePicture() {
 	cout << "picture saved" << endl;
 }
 
-//--------------------------------------------------------------
-//
-// support drag-and-drop of model (.obj) file loading.  when
-// model is dropped in viewport, place origin under cursor
-//
 void ofApp::dragEvent2(ofDragInfo dragInfo) {
 
 	ofVec3f point;
